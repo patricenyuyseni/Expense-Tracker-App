@@ -1,88 +1,145 @@
-
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f6fb;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
 }
-
 
 .container {
-  background: white;
-  width: 350px;
+  width: 380px;
   padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-.app-title {
+h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.balance {
+.balance-container {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.balance h2 {
-  color: #2ecc71;
+#balance {
+  font-size: 28px;
+  margin-top: 5px;
+  color: #38bdf8;
 }
 
-
-.expense-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.expense-form input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-
-#add-expense-btn {
-  padding: 10px;
-  border: none;
-  background: #3498db;
-  color: white;
-  font-size: 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#add-expense-btn:hover {
-  background: #2980b9;
-}
-
-
-#expense-list {
-  list-style: none;
-}
-
-
-#expense-list li {
-  background: #f8f8f8;
-  padding: 10px;
-  margin-bottom: 8px;
-  border-radius: 6px;
+.summary {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.income, .expense {
+  width: 48%;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.income {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid #10b981;
+  color: #10b981;
+}
+
+.expense {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid #ef4444;
+  color: #ef4444;
+}
+
+h3 {
+  margin: 15px 0 10px;
+  font-weight: 500;
+}
+
+.list {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.list li {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid;
+  transition: 0.3s ease;
+}
+
+.list li:hover {
+  transform: scale(1.02);
+}
+
+.list li.plus {
+  border-color: #10b981;
+}
+
+.list li.minus {
+  border-color: #ef4444;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+form input::placeholder {
+  color: #cbd5e1;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+form button:hover {
+  background: #0ea5e9;
 }
